@@ -1,9 +1,13 @@
 package genericCheckpointing.driver;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Vector;
 
+import genericCheckpointing.util.MyLogger;
+import genericCheckpointing.util.MyLogger.DebugLevel;
 import genericCheckpointing.server.RestoreI;
 import genericCheckpointing.server.StoreI;
 import genericCheckpointing.server.StoreRestoreI;
@@ -25,6 +29,7 @@ public class Driver {
 
 		final String METHOD_TYPE = args[0];
 		final int NUM_OF_OBJECTS = Integer.parseInt(args[1]);
+		argchk(args);
 		String FILE_NAME = "checkpoint.txt";
 
 		if (METHOD_TYPE.equalsIgnoreCase("deser")) {
@@ -137,6 +142,49 @@ public class Driver {
 
 			System.out.println("Number of Primes:" + uniquePrimeCount);
 			System.out.println("Number of Palindromes:" + palindromes.toString());
+		}
+	}
+	private static void argchk(String[] args){
+		File inputfile;
+		
+		if(args.length == 3) {
+			
+			try{
+				Integer.parseInt(args[1]);
+			}catch(NumberFormatException e) {
+				e.printStackTrace();
+				System.err.println("Invalid value for NUM_OF_OBJECTS");
+			}
+			inputfile = new File(args[2]);
+			if(inputfile.isFile()){
+				;
+			}
+			else if(inputfile.isDirectory()){
+				try {
+					throw new IOException("Input File entered Is a directory please Enter the File name");
+				} catch (IOException e) {
+					//MyLogger.writeMessage("Caught hold of exception", DebugLevel.EXCEPTION);
+					e.printStackTrace();
+				}
+			}
+			else {
+				try {
+					throw new IOException("Input File not found please Enter the Correct File name");
+				} catch (IOException e) {
+					//MyLogger.writeMessage("Caught hold of exception", DebugLevel.EXCEPTION);
+					e.printStackTrace();
+				}
+			}
+			
+		}
+		else {
+			try {
+				throw new ArrayIndexOutOfBoundsException("Give exactly 3 arguments");
+			}catch(ArrayIndexOutOfBoundsException e) {
+				//MyLogger.writeMessage("Caught hold of exception", DebugLevel.EXCEPTION);
+				e.printStackTrace();
+				System.exit(1);
+			}finally {}
 		}
 	}
 }
