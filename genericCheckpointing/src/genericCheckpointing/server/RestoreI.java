@@ -1,9 +1,7 @@
 package genericCheckpointing.server;
 
-public class RestoreI {
+import genericCheckpointing.util.SerializableObject;
 
-	public RestoreI() {
-		// TODO Auto-generated constructor stub
-	}
-
+public interface RestoreI extends StoreRestoreI {
+    SerializableObject readObj(String wireFormat);
 }

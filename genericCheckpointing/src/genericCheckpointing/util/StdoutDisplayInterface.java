@@ -1,16 +1,10 @@
 package genericCheckpointing.util;
 
-/**
- * The Interface StdoutDisplayInterface.
- */
 public interface StdoutDisplayInterface {
-	
+
 	/**
-	 * Write to stdout.
-	 *
-	 * @param String s to write to file
+	 * @param s - write to standard output
 	 */
-	void writeToStdout(String s);
-	
-	public void writeSumToScreen();
+	public void writeToStdout(String s);
+
 }

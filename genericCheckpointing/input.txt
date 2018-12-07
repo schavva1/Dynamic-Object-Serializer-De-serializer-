@@ -1,0 +1,49 @@
+<DPSerialization>
+  <complexType xsi:type="genericCheckpointing.util.MyAllTypesFirst">
+    <myLongxsi:type="xsd:long">1018950442550885531</myLong>
+    <myBoolxsi:type="xsd:boolean">false</myBool>
+    <myOtherIntxsi:type="xsd:int">18</myOtherInt>
+    <myStringxsi:type="xsd:string">lu</myString>
+  </complexType>
+</DPSerialization>
+<DPSerialization>
+  <complexType xsi:type="genericCheckpointing.util.MyAllTypesSecond">
+    <myCharTxsi:type="xsd:char">d</myCharT>
+    <myFloatTxsi:type="xsd:float">0.48316324</myFloatT>
+    <myShortTxsi:type="xsd:short">145</myShortT>
+    <myOtherDoubleTxsi:type="xsd:double">28.132568823025977</myOtherDoubleT>
+  </complexType>
+</DPSerialization>
+<DPSerialization>
+  <complexType xsi:type="genericCheckpointing.util.MyAllTypesFirst">
+    <myIntxsi:type="xsd:int">87</myInt>
+    <myBoolxsi:type="xsd:boolean">true</myBool>
+    <myOtherIntxsi:type="xsd:int">54</myOtherInt>
+    <myStringxsi:type="xsd:string">zh</myString>
+  </complexType>
+</DPSerialization>
+<DPSerialization>
+  <complexType xsi:type="genericCheckpointing.util.MyAllTypesSecond">
+    <myCharTxsi:type="xsd:char">v</myCharT>
+    <myFloatTxsi:type="xsd:float">0.78079736</myFloatT>
+    <myShortTxsi:type="xsd:short">250</myShortT>
+    <myDoubleTxsi:type="xsd:double">24.06229198213602</myDoubleT>
+    <myOtherDoubleTxsi:type="xsd:double">35.71761511130083</myOtherDoubleT>
+  </complexType>
+</DPSerialization>
+<DPSerialization>
+  <complexType xsi:type="genericCheckpointing.util.MyAllTypesFirst">
+    <myIntxsi:type="xsd:int">40</myInt>
+    <myBoolxsi:type="xsd:boolean">true</myBool>
+    <myOtherIntxsi:type="xsd:int">70</myOtherInt>
+    <myStringxsi:type="xsd:string">ah</myString>
+    <myOtherLongxsi:type="xsd:long">5416004047529397959</myOtherLong>
+  </complexType>
+</DPSerialization>
+<DPSerialization>
+  <complexType xsi:type="genericCheckpointing.util.MyAllTypesSecond">
+    <myCharTxsi:type="xsd:char">d</myCharT>
+    <myFloatTxsi:type="xsd:float">0.058877587</myFloatT>
+    <myShortTxsi:type="xsd:short">322</myShortT>
+  </complexType>
+</DPSerialization>

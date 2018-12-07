@@ -1,71 +1,62 @@
 package genericCheckpointing.util;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-/**
- * @author suvar
- *
- */
 public class FileProcessor {
-	
-	private File first;
-	private FileReader filereader;
-	private BufferedReader buffreader;
-	private String student_course = null;
-	String line = "";
+
+	private static BufferedReader reader;
+
+	public FileProcessor() {
+	}
 
 	/**
-	 * @param input
+	 * @param fileName from where the file processing to be done
+	 * @throws IOException
 	 */
-	public FileProcessor(String input) {
-		this.student_course = input;
-		first = new File(student_course);
-
+	public FileProcessor(String fileName) {
 		try {
-			filereader = new FileReader(first);
-			buffreader = new BufferedReader(filereader);
+			reader = new BufferedReader(new FileReader(fileName));
 		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
-
-	@Override
-	public String toString() {
-		return "FileProcessor [first=" + first + ", filereader=" + filereader + ", buffreader=" + buffreader
-				+ ", student_course=" + student_course + ", line=" + line + ", readline()=" + readline()
-				+ ", getbuffreader()=" + getbuffreader() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
-				+ ", toString()=" + super.toString() + "]";
 	}
 
 	/**
-	 * @return
+	 * @return String - A line read from a file
+	 * @throws IOException
 	 */
-	public synchronized String readline() {
+	public String readLine() {
 		try {
-			line = getbuffreader().readLine();
-		} catch(IOException e)  {
+			return reader.readLine();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-		return line;
+		return null;
 	}
 
-	private BufferedReader getbuffreader () {
-		return buffreader;
-	}
-
+	/**
+	 * @throws IOException
+	 */
 	public void close() {
 		try {
-			filereader.close();
-			buffreader.close();
+			reader.close();
 		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
-	
+
+	/**
+	 * @return String - object converted to String
+	 */
+	@Override
+	public String toString() {
+		return super.toString();
+	}
+
 }

@@ -1,9 +1,18 @@
 package genericCheckpointing.util;
 
-/**
- * @author suvar
- *
- */
+import java.io.IOException;
+
 public interface FileDisplayInterface {
-    void writeToFile();
+
+	/**
+	 * @param s - write to the file
+	 * @throws IOException
+	 */
+	public void writeToFile(String s) throws IOException;
+
+	/**
+	 * @throws IOException
+	 */
+	public void close() throws IOException;
+
 }
