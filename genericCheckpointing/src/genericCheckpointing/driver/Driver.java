@@ -135,8 +135,8 @@ public class Driver {
 				}
 			}
 
-			System.out.println(uniquePrimeCount);
-			System.out.println(palindromes.toString());
+			System.out.println("Number of Primes:" + uniquePrimeCount);
+			System.out.println("Number of Palindromes:" + palindromes.toString());
 		}
 	}
 }

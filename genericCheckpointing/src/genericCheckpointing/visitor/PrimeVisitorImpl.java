@@ -3,6 +3,10 @@ package genericCheckpointing.visitor;
 import genericCheckpointing.util.MyAllTypesFirst;
 import genericCheckpointing.util.MyAllTypesSecond;
 
+/**
+ * @author suvar
+ *
+ */
 public class PrimeVisitorImpl implements VisitorI {
 
 	public PrimeVisitorImpl() {
@@ -34,6 +38,10 @@ public class PrimeVisitorImpl implements VisitorI {
 		return 0;
 	}
 	
+	/**
+	 * @param num
+	 * @return
+	 */
 	private boolean isPrime(int num) {
         boolean flag = false;
         for(int i = 2; i <= num/2; ++i)
@@ -50,5 +58,12 @@ public class PrimeVisitorImpl implements VisitorI {
         else
             return false;
 	}
+
+	@Override
+	public String toString() {
+		return "PrimeVisitorImpl [getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
+				+ super.toString() + "]";
+	}
+	
 
 }

@@ -5,9 +5,18 @@ import genericCheckpointing.server.StoreRestoreI;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
 
+/**
+ * @author suvar
+ *
+ */
 public class ProxyCreator
 {
 
+	/**
+	 * @param interfaceArray
+	 * @param handler
+	 * @return
+	 */
 	public StoreRestoreI createProxy(Class<?>[] interfaceArray, InvocationHandler handler){
 		StoreRestoreI storeRestoreRef =
             (StoreRestoreI)
@@ -19,4 +28,11 @@ public class ProxyCreator
 
 		return storeRestoreRef;
 	}
+
+	@Override
+	public String toString() {
+		return "ProxyCreator [getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
+				+ super.toString() + "]";
+	}
+	
 }

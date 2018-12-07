@@ -41,4 +41,10 @@ public class StoreRestoreHandler implements InvocationHandler {
 	public void setReader(FileProcessor fp) {
 		this.reader = fp;
 	}
+
+	@Override
+	public String toString() {
+		return "StoreRestoreHandler [fileName=" + fileName + ", reader=" + reader + ", writer=" + writer + "]";
+	}
+	
 }

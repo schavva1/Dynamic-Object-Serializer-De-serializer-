@@ -3,6 +3,10 @@ package genericCheckpointing.visitor;
 import genericCheckpointing.util.MyAllTypesFirst;
 import genericCheckpointing.util.MyAllTypesSecond;
 
+/**
+ * @author suvar
+ *
+ */
 public class PalindromVisitorImpl implements VisitorI {
 
 	public PalindromVisitorImpl() {
@@ -22,6 +26,10 @@ public class PalindromVisitorImpl implements VisitorI {
 		return 0;
 	}
 	
+	/**
+	 * @param str
+	 * @return
+	 */
 	private boolean isPalindrome(String str) {
 		StringBuilder input = new StringBuilder();
 		input.append(str);
@@ -33,5 +41,12 @@ public class PalindromVisitorImpl implements VisitorI {
 		return false;
 		
 	}
+
+	@Override
+	public String toString() {
+		return "PalindromVisitorImpl [getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
+				+ super.toString() + "]";
+	}
+	
 
 }

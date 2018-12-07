@@ -47,9 +47,17 @@ public class XMLSerialization implements SerStrategy {
 		}
 	}
 
+	/**
+	 * @param writer
+	 */
 	public void setWriter(Results writer) {
 		this.writer = writer;
 	}
 
+	@Override
+	public String toString() {
+		return "XMLSerialization [writer=" + writer + "]";
+	}
+	
 }
 	

@@ -2,8 +2,13 @@ package genericCheckpointing.util;
 
 import genericCheckpointing.visitor.VisitorI;
 
+/**
+ * @author suvar
+ *
+ */
 public class MyAllTypesFirst extends SerializableObject{
-
+	
+	
 	int myInt;
 	long myLong;
 	boolean myBool;
@@ -15,6 +20,14 @@ public class MyAllTypesFirst extends SerializableObject{
 		
 	}
 	
+	/**
+	 * @param myInt
+	 * @param myLong
+	 * @param myString
+	 * @param myBool
+	 * @param myOtherInt
+	 * @param myOtherLong
+	 */
 	public MyAllTypesFirst(int myInt, long myLong, String myString, boolean myBool, int myOtherInt, long myOtherLong) {
 		this.myInt = myInt;
 		this.myLong = myLong;
@@ -118,6 +131,10 @@ public class MyAllTypesFirst extends SerializableObject{
 		return true;
 	}
 	
+	/**
+	 * @param visitor
+	 * @return
+	 */
 	public int accept(VisitorI visitor) {
 		return visitor.visit(this);
 	}

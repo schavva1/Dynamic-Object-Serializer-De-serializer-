@@ -6,6 +6,10 @@ public class DeserializeTypes {
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * @param type
+	 * @return
+	 */
 	public static Class<?> getSignatureType(String type) {
 
 		switch(type) {
@@ -21,6 +25,11 @@ public class DeserializeTypes {
 		return null;
 	}
 
+	/**
+	 * @param type
+	 * @param value
+	 * @return
+	 */
 	public static Object getArgValue(String type, String value) {
 
 		switch(type) {
@@ -35,4 +44,11 @@ public class DeserializeTypes {
 		}
 		return null;
 	}
+
+	@Override
+	public String toString() {
+		return "DeserializeTypes [getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
+				+ super.toString() + "]";
+	}
+	
 }

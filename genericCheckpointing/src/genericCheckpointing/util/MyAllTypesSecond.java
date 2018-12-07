@@ -2,6 +2,10 @@ package genericCheckpointing.util;
 
 import genericCheckpointing.visitor.VisitorI;
 
+/**
+ * @author suvar
+ *
+ */
 public class MyAllTypesSecond extends SerializableObject{
 
 	char myCharT;
@@ -14,6 +18,13 @@ public class MyAllTypesSecond extends SerializableObject{
 		
 	}
 	
+	/**
+	 * @param myCharT
+	 * @param myFloatT
+	 * @param myShortT
+	 * @param myDoubleT
+	 * @param myOtherDoubleT
+	 */
 	public MyAllTypesSecond(char myCharT, float myFloatT, short myShortT, double myDoubleT, double myOtherDoubleT) {
 		this.myCharT = myCharT;
 		this.myFloatT = myFloatT;
@@ -105,6 +116,10 @@ public class MyAllTypesSecond extends SerializableObject{
 		return true;
 	}
 	
+	/**
+	 * @param visitor
+	 * @return
+	 */
 	public int accept(VisitorI visitor) {
 		return visitor.visit(this);
 	}

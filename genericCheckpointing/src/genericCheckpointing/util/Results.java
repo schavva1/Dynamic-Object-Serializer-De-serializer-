@@ -15,6 +15,9 @@ public class Results implements FileDisplayInterface, StdoutDisplayInterface {
 		
 	}
 
+	/**
+	 * @param outputFile
+	 */
 	public Results(String outputFile) {
 		try {
 			writer = new BufferedWriter(new FileWriter(outputFile, true));

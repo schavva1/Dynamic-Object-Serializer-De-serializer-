@@ -6,6 +6,12 @@ public class SerializeTypes {
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * @param fieldName
+	 * @param fieldType
+	 * @param fieldValue
+	 * @return
+	 */
 	public static String convertFieldToXML(String fieldName, Class<?> fieldType, Object fieldValue) {
 		if (fieldType == int.class && (int) fieldValue >= 10) {
 			return serializeInt(fieldName, fieldValue);
@@ -58,6 +64,12 @@ public class SerializeTypes {
 
 	private static String serializeInt(String fieldName, Object fieldValue) {
 		return "    <" + fieldName + "xsi:type=\"xsd:int\">"+(int)fieldValue+"</" + fieldName + ">\n";
+	}
+
+	@Override
+	public String toString() {
+		return "SerializeTypes [getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
+				+ super.toString() + "]";
 	}
 
 }

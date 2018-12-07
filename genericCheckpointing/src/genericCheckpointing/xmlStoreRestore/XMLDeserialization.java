@@ -19,6 +19,9 @@ public class XMLDeserialization implements SerStrategy {
 		return reader;
 	}
 
+	/**
+	 * @param reader
+	 */
 	public void setReader(FileProcessor reader) {
 		this.reader = reader;
 	}
@@ -82,4 +85,10 @@ public class XMLDeserialization implements SerStrategy {
 	public SerializableObject getsObject() {
 		return sObject;
 	}
+
+	@Override
+	public String toString() {
+		return "XMLDeserialization [reader=" + reader + ", sObject=" + sObject + "]";
+	}
+	
 }
