@@ -26,7 +26,7 @@ import genericCheckpointing.xmlStoreRestore.StoreRestoreHandler;
 public class Driver {
 
 	public static void main(String[] args) {
-
+		argchk(args);
 		final String METHOD_TYPE = args[0];
 		final int NUM_OF_OBJECTS = Integer.parseInt(args[1]);
 		argchk(args);
@@ -69,8 +69,8 @@ public class Driver {
 				v_old.add(myFirst);
 				v_old.add(mySecond);
 
-				System.out.println(myFirst.toString());
-				System.out.println(mySecond);
+				//System.out.println(myFirst.toString());
+				//System.out.println(mySecond);
 
 				// authID (13 and 17) is not being used in the assignment, but
 				// is left for future use. 
@@ -146,15 +146,22 @@ public class Driver {
 	}
 	private static void argchk(String[] args){
 		File inputfile;
-		
+		final String mode = args[0];
 		if(args.length == 3) {
 			
-			try{
-				Integer.parseInt(args[1]);
-			}catch(NumberFormatException e) {
-				e.printStackTrace();
-				System.err.println("Invalid value for NUM_OF_OBJECTS");
+			if (!(mode.equals("serdeser") || mode.equals("deser"))) {
+	            System.err.println("Invalid mode:Must be \"serdeser\" or \"deser\")");
+	            System.exit(-1);
 			}
+			
+			try {
+				Integer.parseInt(args[1]);
+			}
+			catch (NumberFormatException e) {
+	            System.err.println("NUM_OF_OBJECTS should be an integer");
+	            e.printStackTrace();
+	            System.exit(-1);
+	        }
 			inputfile = new File(args[2]);
 			if(inputfile.isFile()){
 				;
